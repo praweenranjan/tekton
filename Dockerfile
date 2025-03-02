@@ -1,5 +1,5 @@
 # Use Maven image to build the application
-FROM maven:3.9.6-eclipse-temurin-21 AS build
+FROM docker.io/library/maven:3.9.6-eclipse-temurin-21 AS build
 
 # Set working directory inside container
 WORKDIR /app
