@@ -1,11 +1,8 @@
 # Use a lightweight JDK runtime image for running the application
 FROM docker.io/library/eclipse-temurin:21-jre
 
-# Set working directory
-WORKDIR /app
-
 # Copy the built JAR file from the build stage
-COPY --from=build /app/target/tekton-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build ./target/tekton-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose application port
 EXPOSE 8080
