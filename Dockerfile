@@ -1,16 +1,3 @@
-# Use Maven image to build the application
-FROM docker.io/library/maven:3.9.6-eclipse-temurin-21 AS build
-
-# Set working directory inside container
-WORKDIR /app
-
-# Copy Maven project files
-COPY pom.xml ./
-COPY src ./src
-
-# Build the application
-RUN mvn clean package -DskipTests
-
 # Use a lightweight JDK runtime image for running the application
 FROM docker.io/library/eclipse-temurin:21-jre
 
